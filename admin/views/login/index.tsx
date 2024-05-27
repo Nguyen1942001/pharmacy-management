@@ -5,17 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // import antd
-import {
-  Button,
-  Checkbox,
-  Col,
-  ConfigProvider,
-  Form,
-  FormProps,
-  Input,
-  Row,
-} from 'antd';
+import { Button, Checkbox, Col, ConfigProvider, Form, FormProps, Input, Row } from 'antd';
 import { TinyColor } from '@ctrl/tinycolor';
+import { Span } from 'next/dist/trace';
 
 type FieldType = {
   email?: string;
@@ -25,25 +17,21 @@ type FieldType = {
 
 const LoginPage = () => {
   const colors1 = ['#6253E1', '#04BEFE'];
-  const getHoverColors = (colors: string[]) =>
-    colors.map((color) => new TinyColor(color).lighten(5).toString());
-  const getActiveColors = (colors: string[]) =>
-    colors.map((color) => new TinyColor(color).darken(5).toString());
+  const getHoverColors = (colors: string[]) => colors.map((color) => new TinyColor(color).lighten(5).toString());
+  const getActiveColors = (colors: string[]) => colors.map((color) => new TinyColor(color).darken(5).toString());
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values: any) => {
     console.log('Success:', values);
   };
 
-  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
-    errorInfo: any
-  ) => {
+  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
 
   return (
     <div className='min-h-screen w-screen overflow-hidden'>
       <Row className='min-h-screen'>
-        <Col span={16}>
+        <Col xs={{ span: 0 }} md={{ span: 12 }} lg={{ span: 16 }}>
           <Image
             src='/images/banner_pharmacy_2.png'
             alt='Picture of the author'
@@ -54,7 +42,7 @@ const LoginPage = () => {
           />
         </Col>
 
-        <Col span={8}>
+        <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }}>
           <div className='flex h-full w-full flex-col items-center justify-center bg-pink-50/60 p-14'>
             <div className='mb-4 text-center'>
               <Image
@@ -69,9 +57,7 @@ const LoginPage = () => {
 
             <h1 className='mb-2 text-center text-xl font-bold'>Đăng nhập</h1>
 
-            <div className='mb-1 text-center'>
-              Chào mừng bạn quay trở lại nhà thuốc
-            </div>
+            <div className='mb-1 text-center'>Chào mừng bạn quay trở lại nhà thuốc</div>
 
             <Form
               name='form_login'
@@ -132,12 +118,7 @@ const LoginPage = () => {
                     },
                   }}
                 >
-                  <Button
-                    type='primary'
-                    htmlType='submit'
-                    size='large'
-                    block={true}
-                  >
+                  <Button type='primary' htmlType='submit' size='large' block={true}>
                     Đăng nhập
                   </Button>
                 </ConfigProvider>
