@@ -2,11 +2,20 @@
 
 // import next
 import Image from 'next/image';
+import Link from 'next/link';
 
 // import antd
-import { Button, Checkbox, Col, ConfigProvider, Form, FormProps, Input, Row } from 'antd';
+import {
+  Button,
+  Checkbox,
+  Col,
+  ConfigProvider,
+  Form,
+  FormProps,
+  Input,
+  Row,
+} from 'antd';
 import { TinyColor } from '@ctrl/tinycolor';
-import Link from 'next/link';
 
 type FieldType = {
   email?: string;
@@ -16,14 +25,18 @@ type FieldType = {
 
 const LoginPage = () => {
   const colors1 = ['#6253E1', '#04BEFE'];
-  const getHoverColors = (colors: string[]) => colors.map((color) => new TinyColor(color).lighten(5).toString());
-  const getActiveColors = (colors: string[]) => colors.map((color) => new TinyColor(color).darken(5).toString());
+  const getHoverColors = (colors: string[]) =>
+    colors.map((color) => new TinyColor(color).lighten(5).toString());
+  const getActiveColors = (colors: string[]) =>
+    colors.map((color) => new TinyColor(color).darken(5).toString());
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values: any) => {
     console.log('Success:', values);
   };
 
-  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo: any) => {
+  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
+    errorInfo: any
+  ) => {
     console.log('Failed:', errorInfo);
   };
 
@@ -42,7 +55,7 @@ const LoginPage = () => {
         </Col>
 
         <Col span={8}>
-          <div className='flex h-full w-full flex-col items-center justify-center bg-pink-50 p-14'>
+          <div className='flex h-full w-full flex-col items-center justify-center bg-pink-50/60 p-14'>
             <div className='mb-4 text-center'>
               <Image
                 src='/images/logo_pharmacy.png'
@@ -56,7 +69,9 @@ const LoginPage = () => {
 
             <h1 className='mb-2 text-center text-xl font-bold'>Đăng nhập</h1>
 
-            <div className='mb-1 text-center'>Chào mừng bạn quay trở lại nhà thuốc</div>
+            <div className='mb-1 text-center'>
+              Chào mừng bạn quay trở lại nhà thuốc
+            </div>
 
             <Form
               name='form_login'
@@ -84,7 +99,7 @@ const LoginPage = () => {
                 label='Mật khẩu'
                 name='password'
                 rules={[{ required: true, message: 'Hãy nhập mật khẩu!' }]}
-                style={{ marginBottom: 10 }}
+                style={{ marginBottom: '10px' }}
               >
                 <Input.Password placeholder='Mật khẩu' />
               </Form.Item>
@@ -117,7 +132,12 @@ const LoginPage = () => {
                     },
                   }}
                 >
-                  <Button type='primary' htmlType='submit' size='large' block={true}>
+                  <Button
+                    type='primary'
+                    htmlType='submit'
+                    size='large'
+                    block={true}
+                  >
                     Đăng nhập
                   </Button>
                 </ConfigProvider>
