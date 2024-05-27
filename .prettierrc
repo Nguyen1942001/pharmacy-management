@@ -14,5 +14,6 @@
   "jsxSingleQuote": true,
   "jsxBracketSpacing": true,
   "jsxPrintWidth": 120,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

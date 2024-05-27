@@ -12,6 +12,7 @@
 html,
 body {
   min-height: 100vh;
+  max-width: 100vw;
 }
 
 img,
@@ -19,7 +20,7 @@ video,
 picture,
 svg {
   max-width: 100%;
-  display: block;
+  display: inline-block;
 }
 
 ol,
