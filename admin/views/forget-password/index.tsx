@@ -30,7 +30,7 @@ const ForgetPasswordPage = () => {
   return (
     <div className='min-h-screen w-screen overflow-hidden'>
       <Row className='min-h-screen'>
-        <Col span={16}>
+        <Col xs={{ span: 0 }} md={{ span: 12 }} lg={{ span: 16 }}>
           <Image
             src='/images/banner_pharmacy_2.png'
             alt='Picture of the author'
@@ -41,7 +41,7 @@ const ForgetPasswordPage = () => {
           />
         </Col>
 
-        <Col span={8}>
+        <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }}>
           <div className='flex h-full w-full flex-col items-center justify-center bg-pink-50/60 p-14'>
             <div className='mb-4 text-center'>
               <Image
